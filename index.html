@@ -2,229 +2,260 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>XONEXS26 — Web Studio & Clan</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #080710;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 8%;
-      border-bottom: 1px solid #282039;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #b58aff;
-    }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      margin-left: 25px;
-      transition: .3s;
-    }
-
-    nav a:hover {
-      color: #b58aff;
-    }
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 50px 20px;
-      background: radial-gradient(ellipse at center, #29134d 0%, #080710 65%);
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 85px);
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #a66cff;
-    }
-
-    .hero p {
-      color: #aaa;
-      font-size: 18px;
-      max-width: 600px;
-      line-height: 1.7;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 28px;
-      background: #873cff;
-      color: white;
-      border-radius: 9px;
-      text-decoration: none;
-      transition: .3s;
-    }
-
-    .button:hover {
-      background: #a66cff;
-      transform: translateY(-3px);
-    }
-
-    section {
-      padding: 85px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 45px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: #151120;
-      border: 1px solid #34234d;
-      border-radius: 16px;
-      padding: 30px;
-      transition: .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      border-color: #a66cff;
-      box-shadow: 0 10px 35px #7935ff22;
-    }
-
-    .card h3 {
-      color: #bd94ff;
-      margin-bottom: 15px;
-      font-size: 23px;
-    }
-
-    .card p {
-      color: #aaa;
-      line-height: 1.7;
-    }
-
-    .clan {
-      background: #100c1b;
-      text-align: center;
-    }
-
-    .clan h2 {
-      font-size: 45px;
-      color: #b58aff;
-      margin-bottom: 20px;
-    }
-
-    .clan p {
-      color: #aaa;
-      line-height: 1.8;
-    }
-
-    footer {
-      padding: 30px;
-      text-align: center;
-      color: #777;
-      border-top: 1px solid #282039;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      nav a {
-        margin: 0 8px;
-        font-size: 13px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XONEXS26 | Web Studio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#090710;color:#fff;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden
+}
+:root{--purple:#9b5cff;--muted:#aaa}
+header{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;
+  align-items:center;padding:20px 8%;
+  background:#0b0913ee;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #30213f
+}
+.logo{font-size:23px;font-weight:900;color:#b98aff}
+nav{display:flex;gap:25px}
+nav a{color:#ccc;text-decoration:none;transition:.3s}
+nav a:hover{color:var(--purple)}
+.hero{
+  min-height:80vh;display:flex;
+  flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:50px 20px;
+  background:radial-gradient(ellipse at center,#35145d 0%,#090710 70%)
+}
+.tag{
+  color:#c6a2ff;border:1px solid #7845b9;
+  padding:9px 17px;border-radius:30px;
+  font-size:12px;letter-spacing:2px
+}
+h1{font-size:clamp(42px,9vw,90px);margin:25px 0}
+h1 span,.purple{color:var(--purple)}
+.hero p{color:#bbb;max-width:600px;line-height:1.8}
+.btn{
+  display:inline-block;padding:14px 24px;
+  border:0;border-radius:9px;
+  background:var(--purple);color:white;
+  text-decoration:none;font-weight:bold;
+  cursor:pointer;transition:.25s;font-size:15px
+}
+.btn:hover{transform:translateY(-3px);background:#b17aff}
+.btn.secondary{background:#211632;border:1px solid #7042a5}
+section{padding:90px 8%;scroll-margin-top:75px}
+.title{text-align:center;font-size:36px;margin-bottom:45px}
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px
+}
+.card{
+  background:#15111f;border:1px solid #332342;
+  border-radius:16px;padding:30px;transition:.3s
+}
+.card:hover{transform:translateY(-7px);border-color:var(--purple)}
+.card h3{color:#c19aff;margin-bottom:15px}
+.card p{color:#aaa;line-height:1.7}
+.icon{font-size:32px;margin-bottom:18px}
+.clan{
+  background:radial-gradient(ellipse at top,#2b1550,#100c19 70%);
+  text-align:center
+}
+.clan h2{font-size:clamp(38px,7vw,65px);color:#b58aff;margin:20px}
+.clan p{color:#ccc;line-height:1.9;max-width:650px;margin:0 auto}
+.command{
+  max-width:430px;margin:30px auto;
+  background:#21172f;border:1px solid #7042a5;
+  border-radius:12px;padding:16px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px
+}
+.command code{font-size:15px;color:#d4b7ff}
+.copy{
+  background:#8b4be3;color:white;border:0;
+  border-radius:7px;padding:10px;cursor:pointer
+}
+.contact{text-align:center;background:#100c18}
+.contact p{color:#aaa;line-height:1.8}
+footer{
+  text-align:center;padding:30px;
+  color:#777;border-top:1px solid #30213f
+}
+.modal{
+  position:fixed;inset:0;z-index:30;
+  background:#000c;display:none;
+  justify-content:center;align-items:center;
+  padding:15px
+}
+.modal.active{display:flex}
+.modal-content{
+  width:100%;max-width:450px;
+  background:#171120;border:1px solid #7042a5;
+  padding:30px;border-radius:17px;
+  position:relative
+}
+.modal-content h2{margin-bottom:20px;color:#c39aff}
+.modal-content label{display:block;margin:14px 0 7px;color:#ccc}
+input,textarea{
+  width:100%;padding:13px;
+  background:#0d0a14;border:1px solid #49345d;
+  border-radius:8px;color:white;font-size:15px;
+  outline:none
+}
+input:focus,textarea:focus{border-color:#a56aff}
+textarea{resize:vertical;min-height:110px}
+.modal-content .btn{width:100%;margin-top:20px}
+.close{
+  position:absolute;right:20px;top:15px;
+  color:#aaa;background:none;border:0;
+  font-size:25px;cursor:pointer
+}
+.note{font-size:12px;color:#888;margin-top:12px}
+@media(max-width:650px){
+  header{flex-direction:column;gap:18px}
+  nav{gap:14px;flex-wrap:wrap;justify-content:center}
+  nav a{font-size:13px}
+  section{padding:65px 6%}
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">XONEXS26</div>
-    <nav>
-      <a href="#home">Главная</a>
-      <a href="#studio">Web Studio</a>
-      <a href="#clan">Клан</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">XONEXS26</div>
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#studio">Услуги</a>
+    <a href="#clan">Клан</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
 
-  <main>
-    <div class="hero" id="home">
-      <h1>CREATE <span>YOUR</span> FUTURE</h1>
-      <p>
-        Создание современных сайтов и развитие
-        игрового сообщества XONEXS26 на MassedWorld.
-      </p>
-      <a href="#studio" class="button">Узнать больше</a>
+<main>
+<div class="hero" id="home">
+  <div class="tag">WEB STUDIO & GAMING</div>
+  <h1>CREATE <span>YOUR</span><br>FUTURE</h1>
+  <p>Создаю современные сайты и развиваю собственный игровой клан XONEXS26 на сервере MassedWorld.</p>
+  <a href="#studio" class="btn" style="margin-top:30px">Исследовать сайт</a>
+</div>
+
+<section id="studio">
+  <h2 class="title">Моя <span class="purple">WEB STUDIO</span></h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Создание сайтов</h3>
+      <p>Разработка современных сайтов для личных проектов, бизнеса и сообществ.</p>
     </div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Веб-дизайн</h3>
+      <p>Красивые интерфейсы, интересные эффекты и адаптация под разные устройства.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h3>Веб-приложения</h3>
+      <p>Полезные инструменты, калькуляторы и небольшие интерактивные проекты.</p>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px">
+    <button class="btn" onclick="openOrder()">Заказать сайт</button>
+  </div>
+</section>
 
-    <section id="studio">
-      <h2 class="section-title">WEB STUDIO</h2>
+<section id="clan" class="clan">
+  <div class="tag">MASSEDWORLD SERVER</div>
+  <h2>XONEXS26</h2>
+  <p>
+    Привет! Это мой клан на сервере MassedWorld.
+    Хочешь вступить? Тогда присоединяйся к нам!
+    <br><br>
+    🏰 У нашего клана есть большой собственный дом.
+    <br>
+    🎁 Свой кит-набор.
+    <br>
+    ⚔️ Совместная игра и развитие клана.
+  </p>
+  <h3 style="margin-top:35px;color:#c39aff">Как вступить?</h3>
+  <p>Заходи на сервер MassedWorld и введи команду в игровой чат:</p>
+  <div class="command">
+    <code>/c join xonexs26</code>
+    <button class="copy" onclick="copyCommand()">Копировать</button>
+  </div>
+  <p id="copyStatus" style="font-size:13px;color:#b58aff"></p>
+</section>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Создание сайтов</h3>
-          <p>Современные сайты для проектов,
-          бизнеса и личных страниц.</p>
-        </div>
+<section id="contact" class="contact">
+  <h2 class="title">Есть <span class="purple">идея?</span></h2>
+  <p>Расскажи, какой сайт ты хочешь получить.<br>Обсудим твой проект в Telegram!</p>
+  <button class="btn" style="margin-top:25px" onclick="openOrder()">Оставить заявку</button>
+</section>
+</main>
 
-        <div class="card">
-          <h3>Дизайн</h3>
-          <p>Красивые интерфейсы,
-          адаптация под телефон и компьютер.</p>
-        </div>
+<footer>© 2026 XONEXS26 | Web Studio</footer>
 
-        <div class="card">
-          <h3>Разработка</h3>
-          <p>Создание небольших веб-приложений
-          и полезных инструментов.</p>
-        </div>
-      </div>
-    </section>
+<div class="modal" id="orderModal" onclick="outsideClose(event)">
+  <div class="modal-content">
+    <button class="close" onclick="closeOrder()">×</button>
+    <h2>Заказать сайт</h2>
+    <p style="color:#aaa;font-size:14px">Расскажи немного о своём проекте.</p>
+    <form onsubmit="sendOrder(event)">
+      <label for="clientName">Ваше имя</label>
+      <input id="clientName" required maxlength="60" placeholder="Как вас зовут?">
+      <label for="clientWish">Что нужно сделать?</label>
+      <textarea id="clientWish" required maxlength="1500" placeholder="Опишите ваш будущий сайт..."></textarea>
+      <button class="btn" type="submit">Перейти в Telegram →</button>
+    </form>
+    <p class="note">Telegram откроется с подготовленным сообщением. Нажмите «Отправить» в Telegram.</p>
+  </div>
+</div>
 
-    <section class="clan" id="clan">
-      <h2>XONEXS26</h2>
-      <p>
-        Наш клан на MassedWorld.<br>
-        Наша история, участники и достижения.
-      </p>
-      <a href="#home" class="button">На главную</a>
-    </section>
-  </main>
+<script>
+// ВАЖНО: замени на свой Telegram username без символа @
+const TELEGRAM_USERNAME = "@xpxp2626";
 
-  <footer>
-    © 2026 XONEXS26. Все права защищены.
-  </footer>
+function openOrder(){
+  document.getElementById("orderModal").classList.add("active");
+}
+function closeOrder(){
+  document.getElementById("orderModal").classList.remove("active");
+}
+function outsideClose(event){
+  if(event.target.id==="orderModal") closeOrder();
+}
+function sendOrder(event){
+  event.preventDefault();
 
+  const name=document.getElementById("clientName").value.trim();
+  const wish=document.getElementById("clientWish").value.trim();
+
+  if(!name || !wish) return;
+
+  if(TELEGRAM_USERNAME==="YOUR_TELEGRAM_USERNAME"){
+    alert("Сначала добавьте свой Telegram username в код сайта.");
+    return;
+  }
+
+  const message=
+    "Здравствуйте! Хочу заказать сайт.%0A%0A"+
+    "Имя: "+encodeURIComponent(name)+"%0A"+
+    "Пожелания: "+encodeURIComponent(wish);
+
+  const url="https://t.me/"+TELEGRAM_USERNAME+"?text="+message;
+  window.open(url,"_blank");
+}
+function copyCommand(){
+  navigator.clipboard.writeText("/c join xonexs26").then(()=>{
+    document.getElementById("copyStatus").textContent="Команда скопирована!";
+  }).catch(()=>{
+    document.getElementById("copyStatus").textContent="Не удалось скопировать. Выдели команду вручную.";
+  });
+}
+</script>
 </body>
 </html>
