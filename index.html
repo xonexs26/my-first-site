@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XONEXS26 — Web Studio & Clan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #080710;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 8%;
+      border-bottom: 1px solid #282039;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b58aff;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #b58aff;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background: radial-gradient(ellipse at center, #29134d 0%, #080710 65%);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 85px);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #a66cff;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 28px;
+      background: #873cff;
+      color: white;
+      border-radius: 9px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .button:hover {
+      background: #a66cff;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #151120;
+      border: 1px solid #34234d;
+      border-radius: 16px;
+      padding: 30px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #a66cff;
+      box-shadow: 0 10px 35px #7935ff22;
+    }
+
+    .card h3 {
+      color: #bd94ff;
+      margin-bottom: 15px;
+      font-size: 23px;
+    }
+
+    .card p {
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .clan {
+      background: #100c1b;
+      text-align: center;
+    }
+
+    .clan h2 {
+      font-size: 45px;
+      color: #b58aff;
+      margin-bottom: 20px;
+    }
+
+    .clan p {
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #282039;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">XONEXS26</div>
+    <nav>
+      <a href="#home">Главная</a>
+      <a href="#studio">Web Studio</a>
+      <a href="#clan">Клан</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <h1>CREATE <span>YOUR</span> FUTURE</h1>
+      <p>
+        Создание современных сайтов и развитие
+        игрового сообщества XONEXS26 на MassedWorld.
+      </p>
+      <a href="#studio" class="button">Узнать больше</a>
+    </div>
+
+    <section id="studio">
+      <h2 class="section-title">WEB STUDIO</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Создание сайтов</h3>
+          <p>Современные сайты для проектов,
+          бизнеса и личных страниц.</p>
+        </div>
+
+        <div class="card">
+          <h3>Дизайн</h3>
+          <p>Красивые интерфейсы,
+          адаптация под телефон и компьютер.</p>
+        </div>
+
+        <div class="card">
+          <h3>Разработка</h3>
+          <p>Создание небольших веб-приложений
+          и полезных инструментов.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="clan" id="clan">
+      <h2>XONEXS26</h2>
+      <p>
+        Наш клан на MassedWorld.<br>
+        Наша история, участники и достижения.
+      </p>
+      <a href="#home" class="button">На главную</a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 XONEXS26. Все права защищены.
+  </footer>
+
+</body>
+</html>
