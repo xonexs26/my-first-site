@@ -228,26 +228,23 @@ function closeOrder(){
 function outsideClose(event){
   if(event.target.id==="orderModal") closeOrder();
 }
-function sendOrder(event){
-  event.preventDefault();
+function sendOrder(event) {
+    event.preventDefault();
 
-  const name=document.getElementById("clientName").value.trim();
-  const wish=document.getElementById("clientWish").value.trim();
+    const name = document.getElementById("clientName").value.trim();
+    const wish = document.getElementById("clientWish").value.trim();
 
-  if(!name || !wish) return;
+    if (!name || !wish) return;
 
-  if(TELEGRAM_USERNAME==="YOUR_TELEGRAM_USERNAME"){
-    alert("Сначала добавьте свой Telegram username в код сайта.");
-    return;
-  }
+    const message = `Здравствуйте! Хочу заказать сайт.
 
-  const message=
-    "Здравствуйте! Хочу заказать сайт.%0A%0A"+
-    "Имя: "+encodeURIComponent(name)+"%0A"+
-    "Пожелания: "+encodeURIComponent(wish);
+Имя: ${name}
+Пожелания: ${wish}`;
 
-  const url="https://t.me/"+TELEGRAM_USERNAME+"?text="+message;
-  window.open(url,"_blank");
+    const url = "https://t.me/" + TELEGRAM_USERNAME +
+                "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
 }
 function copyCommand(){
   navigator.clipboard.writeText("/c join xonexs26").then(()=>{
